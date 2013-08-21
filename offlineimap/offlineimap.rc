@@ -1,0 +1,45 @@
+[general]
+ui = basic
+accounts = gmail
+pythonfile=~/.offlineimap.py
+fsync = False
+
+[Account gmail]
+localrepository = gmail-local
+remoterepository = gmail-remote
+status_backend = sqlite
+postsynchook = mu index --maildir=~/.mail
+
+[Repository gmail-local]
+type = Maildir
+localfolders = ~/.mail/gmail
+nametrans = lambda folder: { 'drafts':    '[Gmail]/Drafts',
+                             'sent':      '[Gmail]/Sent Mail',
+                             'flagged':   '[Gmail]/Starred',
+                             'trash':     '[Gmail]/Trash',
+                             'spam':      '[Gmail]/Spam',
+                             'tcc-lisha': 'TCC/LISHA',
+                           }.get(folder, folder)
+
+[Repository gmail-remote]
+maxconnections = 2
+type = Gmail
+remoteuser = joaopizani
+remotepasseval = keyring.get_password("localmail-gmail","joaopizani@gmail.com")
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+realdelete = no
+nametrans = lambda folder: { '[Gmail]/Drafts':    'drafts',
+                             '[Gmail]/Sent Mail': 'sent',
+                             '[Gmail]/Starred':   'flagged',
+                             '[Gmail]/Trash':     'trash',
+                             '[Gmail]/Spam':      'spam',
+                             'TCC/LISHA':         'tcc-lisha',
+                           }.get(folder, folder)
+
+folderfilter = lambda folder: folder not in [ '[Gmail]/Trash',
+                                              '[Gmail]/All Mail',
+                                              '[Gmail]/Important',
+                                              'opensource'
+                                            ]
+

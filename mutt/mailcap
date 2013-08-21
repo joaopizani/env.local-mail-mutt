@@ -1,0 +1,6 @@
+text/html;                  links2 %s; nametemplate=%s.html
+text/html;                  links2 -dump %s; nametemplate=%s.html; copiousoutput
+
+application/*;              mutt-open '%s'; test=test -n "$DISPLAY"
+
+image/*;                    eog '%s'

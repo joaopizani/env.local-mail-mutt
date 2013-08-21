@@ -1,0 +1,22 @@
+mailboxes \
+    +gmail/INBOX \
+    +gmail/sent \
+    +gmail/flagged \
+    +gmail/drafts \
+    +gmail/misc \
+    +gmail/spam \
+    +gmail/gelegenheden \
+    +gmail/historicas \
+    +gmail/kopen_etc \
+    +gmail/msc2012 \
+    +gmail/utrecht \
+    +gmail/utrecht.uu-cosc \
+    +gmail/utrecht.uu-cosc.svn \
+    +gmail/utrecht.uu-ing \
+    +gmail/ufsc \
+    +gmail/ufsc.pet_computacao \
+    +gmail/ufsc.tcc-lisha \
+    +gmail/woningen.kamernet \
+    +gmail/woningen.super-woningen \
+    +gmail/woningen.vechtplantsoen \
+

@@ -1,0 +1,41 @@
+# GMail
+
+set spoolfile = "+gmail/INBOX"
+
+set postponed = "gmail/drafts"
+
+alternates "joaopizani@inf.ufsc.br|j.p.pizaniflor@students.uu.nl"
+
+
+# Mailboxes to show in the sidebar.
+source ~/.mutt/config-gmail/mailboxes-gmail
+
+# Mark as Spam
+macro index S "<save-message>+gmail/spam<enter>" "mark as spam"
+
+
+# Go to different folders
+macro index,pager gi "<change-folder>+gmail/INBOX<enter>" "go to inbox"
+macro index,pager gs "<change-folder>+gmail/sent<enter>" "go to sent"
+macro index,pager gp "<change-folder>+gmail/spam<enter>" "go to spam"
+macro index,pager gd "<change-folder>+gmail/drafts<enter>" "go to drafts"
+
+macro index,pager gm "<change-folder>+gmail/misc<enter>" "go to misc"
+macro index,pager gh "<change-folder>+gmail/historicas<enter>" "go to historicas"
+macro index,pager gk "<change-folder>+gmail/kopen_etc<enter>" "go to kopen_etc"
+macro index,pager gc "<change-folder>+gmail/utrecht.uu-cosc<enter>" "go to utrecht.uu-cosc"
+macro index,pager gv "<change-folder>+gmail/woningen.vechtplantsoen<enter>" "go to vechtplantsoen"
+
+
+# Move/copy to different folders
+macro index,pager gmm "<save-message>+gmail/misc<enter>" "move to misc"
+macro index,pager gcm "<copy-message>+gmail/misc<enter>" "copy to misc"
+macro index,pager gmh "<save-message>+gmail/historicas<enter>" "move to historicas"
+macro index,pager gch "<copy-message>+gmail/historicas<enter>" "copy to historicas"
+macro index,pager gmk "<save-message>+gmail/kopen_etc<enter>" "move to kopen_etc"
+macro index,pager gck "<copy-message>+gmail/kopen_etc<enter>" "copy to kopen_etc"
+macro index,pager gmc "<save-message>+gmail/utrecht.uu-cosc<enter>" "move to utrecht.uu-cosc"
+macro index,pager gcc "<copy-message>+gmail/utrecht.uu-cosc<enter>" "copy to utrecht.uu-cosc"
+macro index,pager gmv "<save-message>+gmail/woningen.vechtplantsoen<enter>" "move to woningen.vechtplantsoen"
+macro index,pager gcv "<copy-message>+gmail/woningen.vechtplantsoen<enter>" "copy to woningen.vechtplantsoen"
+
