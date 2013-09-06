@@ -135,7 +135,6 @@ set editor = "vim -c 'set tw=65 | normal }'"  # Vim with smaller line wrap for b
 
 
 # Sending email options
-set from     = "joaopizani@gmail.com"
 set sendmail = "msmtp"
 set sendmail_wait = 0
 

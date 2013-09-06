@@ -1,5 +1,7 @@
 # GMail
 
+set from     = "joaopizani@gmail.com"
+
 set spoolfile = "+gmail/INBOX"
 
 set postponed = "gmail/drafts"
@@ -23,7 +25,8 @@ macro index,pager gd "<change-folder>+gmail/drafts<enter>" "go to drafts"
 macro index,pager gm "<change-folder>+gmail/misc<enter>" "go to misc"
 macro index,pager gh "<change-folder>+gmail/historicas<enter>" "go to historicas"
 macro index,pager gk "<change-folder>+gmail/kopen_etc<enter>" "go to kopen_etc"
-macro index,pager gc "<change-folder>+gmail/utrecht.uu-cosc<enter>" "go to utrecht.uu-cosc"
+macro index,pager gn "<change-folder>+gmail/utrecht.uu-ing<enter>" "go to utrecht.uu-ing"
+macro index,pager go "<change-folder>+gmail/utrecht.uu-cosc<enter>" "go to utrecht.uu-cosc"
 macro index,pager gv "<change-folder>+gmail/woningen.vechtplantsoen<enter>" "go to vechtplantsoen"
 
 
@@ -34,8 +37,8 @@ macro index,pager gmh "<save-message>+gmail/historicas<enter>" "move to historic
 macro index,pager gch "<copy-message>+gmail/historicas<enter>" "copy to historicas"
 macro index,pager gmk "<save-message>+gmail/kopen_etc<enter>" "move to kopen_etc"
 macro index,pager gck "<copy-message>+gmail/kopen_etc<enter>" "copy to kopen_etc"
-macro index,pager gmc "<save-message>+gmail/utrecht.uu-cosc<enter>" "move to utrecht.uu-cosc"
-macro index,pager gcc "<copy-message>+gmail/utrecht.uu-cosc<enter>" "copy to utrecht.uu-cosc"
+macro index,pager gmo "<save-message>+gmail/utrecht.uu-cosc<enter>" "move to utrecht.uu-cosc"
+macro index,pager gco "<copy-message>+gmail/utrecht.uu-cosc<enter>" "copy to utrecht.uu-cosc"
 macro index,pager gmv "<save-message>+gmail/woningen.vechtplantsoen<enter>" "move to woningen.vechtplantsoen"
 macro index,pager gcv "<copy-message>+gmail/woningen.vechtplantsoen<enter>" "copy to woningen.vechtplantsoen"
 
