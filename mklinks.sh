@@ -26,8 +26,9 @@ ln -f -s ${DIR}/goobook/goobook_getpass.sh    ${HOME}/.goobook_getpass.sh
 
 read -r -d '' PYCMD <<'EOF'
 import keyring
+em = raw_input("gmail-email-address> ")
 pw = raw_input("gmail-password-onetime> ")
-keyring.set_password("localmail-gmail", "joaopizani@gmail.com", pw)
+keyring.set_password("localmail-gmail", em, pw)
 EOF
 
 python -c "$PYCMD"
