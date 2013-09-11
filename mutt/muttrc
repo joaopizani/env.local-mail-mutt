@@ -49,7 +49,7 @@ hdr_order from: to: cc: date: subject:  # and in this order
 
 
 # Index View Options
-set date_format = "%m/%d"
+set date_format = "%Y-%m-%d %H:%M%z"
 set index_format = "%?M?(#%03M)&(%4l)? [%Z]  %D  %-20.20F  %s"
 set sort = threads                         # like gmail
 set sort_aux = reverse-last-date-received  # like gmail
@@ -74,8 +74,7 @@ macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "ma
 
 
 # Sync email
-macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+macro index o "<shell-escape>offlineimap<enter>"  "run offlineimap to sync all mail"
 
 
 # Saner copy/move dialogs
@@ -111,7 +110,7 @@ auto_view text/html
 alternative_order text/plain text/enriched text/html
 
 # URL View
-macro pager \Cu "|urlview<enter>" "call urlview to open links"
+macro pager \Cb "|urlview<enter>" "call urlview to open links"
 
 
 # Compose View Options
@@ -146,15 +145,17 @@ bind compose p postpone-message
 bind index p recall-message
 
 
+# Mailboxes
+mailboxes `cat ~/.mutt/config-gmail/mailboxes-gmail ~/.mutt/config-news/mailboxes-news | tr -d "\n"`
+
 
 # Extra configs
 source ~/.mutt/themes/current-theme.rc
-
 source ~/.mutt/mutt-mu-search.rc
-
 source ~/.mutt/mutt-goobook.rc
 
 
-# Account Settings
+# Account Settings, news
 source ~/.mutt/config-gmail/mutt-gmail.rc
+source ~/.mutt/config-news/mutt-news.rc
 

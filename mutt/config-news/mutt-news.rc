@@ -1,0 +1,11 @@
+macro index O "<shell-escape>maildir-feed ~/mail/news<enter>"  "run maildir-feed to synchronize news"
+
+macro index,pager gw1 "<change-folder>+news/misc.cfps_1<enter>" "go news 1"
+macro index,pager gw2 "<change-folder>+news/relax.24-oranges_2<enter>" "go news 2"
+macro index,pager gw3 "<change-folder>+news/relax.ccc_3<enter>" "go news 3"
+macro index,pager gw4 "<change-folder>+news/relax.phd-comics_4<enter>" "go news 4"
+macro index,pager gw5 "<change-folder>+news/relax.xkcd_5<enter>" "go news 5"
+macro index,pager gw6 "<change-folder>+news/tech.cs-student_6<enter>" "go news 6"
+macro index,pager gw7 "<change-folder>+news/tech.ghc_7<enter>" "go news 7"
+macro index,pager gw8 "<change-folder>+news/tech.git-annex_8<enter>" "go news 8"
+
