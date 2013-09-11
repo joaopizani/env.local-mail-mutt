@@ -1,4 +1,4 @@
-text/html;       xdg-open %s; test=test -n "$DISPLAY"; nametemplate=%s.html
+text/html;       mutt-open %s; test=test -n "$DISPLAY"; nametemplate=%s.html
 text/html;       links2 -html-assume-codepage %{charset} %s; nametemplate=%s.html
 text/html;       links2 -html-numbered-links 1 -html-assume-codepage %{charset} -dump -codepage utf-8 %s; nametemplate=%s.html; copiousoutput
 
