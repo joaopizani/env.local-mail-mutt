@@ -105,6 +105,10 @@ bind pager N search-opposite
 # View attachments properly.
 bind attach <return> view-mailcap
 
+# Saving attachments to a single, standardized directory, GIVING choice
+macro attach w "<save-entry><kill-line>~/Downloads/mutt-attachments/"
+macro attach e "<save-entry><kill-line>~/Downloads/mutt-attachments/<enter>"
+
 # HTML embedding
 auto_view text/html
 alternative_order text/plain text/enriched text/html

@@ -5,12 +5,13 @@ CANONICAL_SRC=$(readlink -f $REL_SRC)
 DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
 
-# mail directories and mu directories
+# mail directories, mutt directories and mu directories
 mkdir -p ${HOME}/mail/{mail,mu}
 ln -f -s ${HOME}/mail/mail                    ${HOME}/.mail
 ln -f -s ${HOME}/mail/mu                      ${HOME}/.mu
 
 ln -f -s ${DIR}/mutt                          ${HOME}/.mutt
+mkdir -p ${HOME}/Downloads/mutt-attachments
 
 # mutt-open and urlview
 ln -f -s ${DIR}/misc-tools/mutt-open          ${HOME}/bin/mutt-open
