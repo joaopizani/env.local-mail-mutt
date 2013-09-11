@@ -18,11 +18,10 @@ nametrans = lambda folder: { 'drafts':    '[Gmail]/Drafts',
                              'flagged':   '[Gmail]/Starred',
                              'trash':     '[Gmail]/Trash',
                              'spam':      '[Gmail]/Spam',
-                             'tcc-lisha': 'TCC/LISHA',
                            }.get(folder, folder)
 
 [Repository gmail-remote]
-maxconnections = 2
+maxconnections = 1
 type = Gmail
 remoteuser = joaopizani
 remotepasseval = keyring.get_password("localmail-gmail","joaopizani@gmail.com")
@@ -34,7 +33,6 @@ nametrans = lambda folder: { '[Gmail]/Drafts':    'drafts',
                              '[Gmail]/Starred':   'flagged',
                              '[Gmail]/Trash':     'trash',
                              '[Gmail]/Spam':      'spam',
-                             'TCC/LISHA':         'tcc-lisha',
                            }.get(folder, folder)
 
 folderfilter = lambda folder: folder not in [ '[Gmail]/Trash',
