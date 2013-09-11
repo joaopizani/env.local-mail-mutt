@@ -17,7 +17,8 @@ ln -f -s ${DIR}/misc-tools/mutt-open          ${HOME}/bin/mutt-open
 ln -f -s ${DIR}/misc-tools/urlview            ${HOME}/.urlview
 
 # msmtp
-ln -f -s ${DIR}/msmtp.rc                      ${HOME}/.msmtprc
+ln -f -s ${DIR}/msmtp/msmtp.rc                ${HOME}/.msmtprc
+ln -f -s ${DIR}/msmtp/msmtp.log               ${HOME}/.msmtp.log
 
 # offlineimap
 ln -f -s ${DIR}/offlineimap/offlineimap.rc    ${HOME}/.offlineimaprc

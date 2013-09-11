@@ -1,0 +1,2 @@
+sep 05 20:20:09 host=smtp.gmail.com tls=on auth=on user=joaopizani@gmail.com from=j.p.pizaniflor@students.uu.nl recipients=w.s.swierstra@uu.nl mailsize=2191 smtpstatus=250 smtpmsg='250 2.0.0 OK 1378405209 t6sm50763960eel.12 - gsmtp' exitcode=EX_OK
+sep 06 10:28:08 host=smtp.gmail.com tls=on auth=on user=joaopizani@gmail.com from=j.p.pizaniflor@students.uu.nl recipients=w.s.swierstra@uu.nl mailsize=1392 smtpstatus=250 smtpmsg='250 2.0.0 OK 1378456088 j7sm2180879eeo.15 - gsmtp' exitcode=EX_OK

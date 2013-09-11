@@ -11,4 +11,4 @@ tls_trust_file /etc/ssl/certs/ca-certificates.crt
 
 account default : joaopizani-gmail
 
-logfile ~/.mutt/msmtp.log
+logfile ~/.msmtp.log
