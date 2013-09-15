@@ -6,9 +6,10 @@ DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
 
 # mail directories, mutt directories and mu directories
-mkdir -p ${HOME}/mail/{mail,mu}
+mkdir -p ${HOME}/mail/mail
 ln -f -s ${HOME}/mail/mail                    ${HOME}/.mail
-ln -f -s ${HOME}/mail/mu                      ${HOME}/.mu
+mkdir -p ${DIR}/mu/{cache,xapian,results,log}
+ln -f -s ${DIR}/mu                            ${HOME}/.mu
 
 ln -f -s ${DIR}/mutt                          ${HOME}/.mutt
 mkdir -p ${HOME}/Downloads/mutt-attachments
