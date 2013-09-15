@@ -26,6 +26,9 @@ ln -f -s ${DIR}/msmtp/msmtp.log               ${HOME}/.msmtp.log
 ln -f -s ${DIR}/offlineimap/offlineimap.rc    ${HOME}/.offlineimaprc
 ln -f -s ${DIR}/offlineimap/offlineimap.py    ${HOME}/.offlineimap.py
 
+# pydelatt, archival, etc.
+ln -s ${DIR}/misc-tools/pydelatt.py           ${HOME}/bin/pydelatt.py
+
 # goobook
 ln -f -s ${DIR}/goobook/goobook.rc            ${HOME}/.goobookrc
 chmod +x ${DIR}/goobook/goobook_getpass.sh
