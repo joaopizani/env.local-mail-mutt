@@ -21,7 +21,7 @@ nametrans = lambda folder: { 'drafts':    '[Gmail]/Drafts',
                            }.get(folder, folder)
 
 [Repository gmail-remote]
-maxconnections = 1
+maxconnections = 2
 type = Gmail
 remoteuser = joaopizani
 remotepasseval = keyring.get_password("localmail-gmail","joaopizani@gmail.com")
