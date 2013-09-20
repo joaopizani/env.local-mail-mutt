@@ -12,7 +12,7 @@ MUTTBKPDIR="${COMMBKPINI}/mutt"
 IRCBKPDIR="${COMMBKPINI}/irclogs"
 mkdir -p ${MUTTBKPDIR} ${IRCBKPDIR}
 
-delatt-maildir.sh ${MUTTSRCDIR} ${MUTTBKPDIR}
+${HOME}/bin/delatt-maildir.sh ${MUTTSRCDIR} ${MUTTBKPDIR}
 cp -r "${IRCSRCDIR}/" "${IRCBKPDIR}/"
 
 tar -cf - -C ${COMMTMPDIR} ${COMMBKPNAME} | gzip -9 - > "${COMMBKPINI}.tar.gz"
