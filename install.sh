@@ -6,8 +6,8 @@ DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
 
 # mail directories, mutt directories and mu directories
-mkdir -p ${HOME}/mail/mail
-ln -f -s ${HOME}/mail/mail                       ${HOME}/.mail
+mkdir -p ${HOME}/comm/mutt
+ln -f -s ${HOME}/comm/mutt                       ${HOME}/.mail
 mkdir -p ${DIR}/mu/{cache,xapian,results,log}
 ln -f -s ${DIR}/mu                               ${HOME}/.mu
 
@@ -27,7 +27,7 @@ ln -f -s ${DIR}/offlineimap/offlineimap.rc       ${HOME}/.offlineimaprc
 ln -f -s ${DIR}/offlineimap/offlineimap.py       ${HOME}/.offlineimap.py
 
 # pydelatt, archival, etc.
-git clone https://gist.github.com/6572826.git    ${DIR}/misc-tools/pydelatt
+git clone git://gist.github.com/6572826.git    ${DIR}/misc-tools/pydelatt
 chmod +x ${DIR}/misc-tools/pydelatt/pydelatt.py
 ln -s ${DIR}/misc-tools/pydelatt/pydelatt.py     ${HOME}/bin/pydelatt.py
 
