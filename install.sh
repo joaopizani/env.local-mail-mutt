@@ -32,6 +32,7 @@ git clone git://gist.github.com/6572826.git      ${DIR}/misc-tools/pydelatt
 chmod +x ${DIR}/misc-tools/pydelatt/pydelatt.py
 ln -s ${DIR}/misc-tools/pydelatt/pydelatt.py     ${HOME}/bin/pydelatt.py
 ln -s ${DIR}/misc-tools/delatt-maildir.sh        ${HOME}/bin/delatt-maildir.sh
+ln -s ${DIR}/misc-tools/archive-maildirs.sh      ${HOME}/bin/archive-maildirs.sh
 
 # goobook
 ln -f -s ${DIR}/goobook/goobook.rc               ${HOME}/.goobookrc
