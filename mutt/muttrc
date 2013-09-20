@@ -113,8 +113,9 @@ macro attach e "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
-# URL View
-macro pager \Cb "|urlview<enter>" "call urlview to open links"
+# URL Scan
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs"
 
 
 # Compose View Options
