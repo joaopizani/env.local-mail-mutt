@@ -3,6 +3,8 @@
 SRCDIR=${1}
 TRGDIR=${2}
 
+mkdir -p ${TRGDIR}
+
 cd ${SRCDIR}
 
 find -type d -exec mkdir -p ${TRGDIR}/{} \;
