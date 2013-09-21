@@ -1,0 +1,16 @@
+{
+    "relax": {
+        "phd-comics_4": "http://www.phdcomics.com/gradfeed.php",
+        "ccc_3": "http://feeds.feedburner.com/CartesianClosedComic",
+        "24-oranges_2": "http://www.24oranges.nl/feed/",
+        "xkcd_5": "http://xkcd.com/rss.xml"
+    },
+    "tech": {
+        "ghc_7": "http://hackage.haskell.org/trac/ghc/blog?format=rss",
+        "cs-student_6": "http://lifecs.likai.org/feeds/posts/default",
+        "git-annex_8": "http://git-annex.branchable.com/design/assistant/blog/index.rss"
+    },
+    "misc": {
+        "cfps_1": "http://www.wikicfp.com/cfp/rss?list=23611"
+    }
+}
