@@ -1,16 +1,10 @@
 {
-    "relax": {
-        "phd-comics": "http://www.phdcomics.com/gradfeed.php",
-        "ccc": "http://feeds.feedburner.com/CartesianClosedComic",
-        "24oranges2": "http://www.24oranges.nl/feed/",
-        "xkcd": "http://xkcd.com/rss.xml"
-    },
-    "tech": {
-        "ghc": "http://hackage.haskell.org/trac/ghc/blog?format=rss",
-        "cs-student": "http://lifecs.likai.org/feeds/posts/default",
-        "git-annex": "http://git-annex.branchable.com/design/assistant/blog/index.rss"
-    },
-    "misc": {
-        "cfps": "http://www.wikicfp.com/cfp/rss?list=23611"
-    }
+    "nos": "http://feeds.nos.nl/nosjournaal?format=xml",
+    "cfps": "http://www.wikicfp.com/cfp/rss?list=23611",
+    "phd-comics": "http://www.phdcomics.com/gradfeed.php",
+    "24oranges": "http://www.24oranges.nl/feed/",
+    "xkcd": "http://xkcd.com/rss.xml",
+    "ghc": "http://hackage.haskell.org/trac/ghc/blog?format=rss",
+    "cs-student": "http://lifecs.likai.org/feeds/posts/default",
+    "git-annex": "http://git-annex.branchable.com/design/assistant/blog/index.rss"
 }

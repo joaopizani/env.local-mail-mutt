@@ -16,7 +16,7 @@ NDIR_GLOBAL="${HOME}/.news"
 mkdir -p ${NDIR_TRUE} ${NDIR_LINKS}
 ln -f -s ${NDIR_TRUE} ${NDIR_GLOBAL}
 
-maildir-feed
+maildir-feed ${NDIR_GLOBAL}
 
 CNT=0
 for n in $(ls -A1 ${NDIR_TRUE}); do
