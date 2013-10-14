@@ -18,6 +18,7 @@ macro index,pager gp "<change-folder>+gmail/spam<enter>" "go to spam"
 macro index,pager gd "<change-folder>+gmail/drafts<enter>" "go to drafts"
 
 macro index,pager gh "<change-folder>+gmail/historicas<enter>" "go to historicas"
+macro index,pager gr "<change-folder>+gmail/misc<enter>" "go to misc"
 macro index,pager gk "<change-folder>+gmail/kopen_etc<enter>" "go to kopen_etc"
 macro index,pager gn "<change-folder>+gmail/utrecht.uu-ing<enter>" "go to utrecht.uu-ing"
 macro index,pager go "<change-folder>+gmail/utrecht.uu-cosc<enter>" "go to utrecht.uu-cosc"
@@ -25,8 +26,12 @@ macro index,pager gv "<change-folder>+gmail/woningen.vechtplantsoen<enter>" "go 
 
 
 # Move/copy to different folders
+macro index,pager gmi "<save-message>+gmail/INBOX<enter>" "move to inbox"
+macro index,pager gci "<copy-message>+gmail/INBOX<enter>" "copy to inbox"
 macro index,pager gmh "<save-message>+gmail/historicas<enter>" "move to historicas"
 macro index,pager gch "<copy-message>+gmail/historicas<enter>" "copy to historicas"
+macro index,pager gmr "<save-message>+gmail/misc<enter>" "move to misc"
+macro index,pager gcr "<copy-message>+gmail/misc<enter>" "copy to misc"
 macro index,pager gmk "<save-message>+gmail/kopen_etc<enter>" "move to kopen_etc"
 macro index,pager gck "<copy-message>+gmail/kopen_etc<enter>" "copy to kopen_etc"
 macro index,pager gmo "<save-message>+gmail/utrecht.uu-cosc<enter>" "move to utrecht.uu-cosc"
