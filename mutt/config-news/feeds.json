@@ -1,10 +1,14 @@
 {
     "nos": "http://feeds.nos.nl/nosjournaal?format=xml",
+    "rtv-utrecht": "http://rss.rtvutrecht.nl/nieuws.xml",
+    "band-news": "http://www.band.uol.com.br/rss/brasil.xml",
+
     "cfps": "http://www.wikicfp.com/cfp/rss?list=23611",
-    "phd-comics": "http://www.phdcomics.com/gradfeed.php",
     "24oranges": "http://www.24oranges.nl/feed/",
-    "xkcd": "http://xkcd.com/rss.xml",
+
     "ghc": "http://hackage.haskell.org/trac/ghc/blog?format=rss",
-    "cs-student": "http://lifecs.likai.org/feeds/posts/default",
+    "haskellnews": "http://haskellnews.org/feed",
+
+    "lwn-linux": "http://lwn.net/headlines/Features",
     "git-annex": "http://git-annex.branchable.com/design/assistant/blog/index.rss"
 }
