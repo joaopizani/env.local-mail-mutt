@@ -1,0 +1,2 @@
+*/30 * * * * offlineimap
+*/35 * * * * /home/joaopizani/bin/maildir-feed /home/joaopizani/.news
