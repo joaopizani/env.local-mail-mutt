@@ -18,9 +18,10 @@ ln -f -s -T ${NDIR_TRUE} ${NDIR_GLOBAL}
 
 maildir-feed ${NDIR_GLOBAL}
 
-CNT=0  # numbered links only work now from 0 until 9, TODO two-digit numbers
+CNT=0
+rm -f ${NDIR_LINKS}/*
 for n in $(ls -A1 ${NDIR_TRUE}); do
-    ln -f -s "${NDIR_TRUE}/${n}" "${NDIR_LINKS}/${CNT}_$(echo ${n} | sed 's/^.//')"
+    ln -f -s "${NDIR_TRUE}/${n}" "${NDIR_LINKS}/$(printf %02d ${CNT})_$(echo ${n} | sed 's/^.//')"
     (( CNT++ ))
 done
 
