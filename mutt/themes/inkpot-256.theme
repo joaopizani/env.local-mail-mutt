@@ -8,6 +8,7 @@ color   normal      color229 color232
 color   error       color231 color196
 color   indicator   color232 color215
 color   markers     color37 color232
+color   index       brightred color232 ~N
 color   index       color196 color232 ~D
 color   index       color196 color232 ~F
 color   index       color49 color232 ~T
