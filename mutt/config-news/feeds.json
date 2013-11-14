@@ -11,5 +11,6 @@
 
     "lwn-linux": "http://lwn.net/headlines/Features",
     "git-annex": "http://git-annex.branchable.com/design/assistant/blog/index.rss",
-    "coindesk": "http://feeds.feedburner.com/CoinDesk?fmt=xml"
+    "coindesk": "http://feeds.feedburner.com/CoinDesk?fmt=xml",
+    "hackernews": "http://news.ycombinator.com/rss"
 }
