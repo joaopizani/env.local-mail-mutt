@@ -158,6 +158,7 @@ mailboxes `cat ~/.mutt/config-gmail/mailboxes-gmail ~/.mutt/config-news/mailboxe
 source ~/.mutt/themes/current-theme.rc
 source ~/.mutt/mutt-mu-search.rc
 source ~/.mutt/mutt-goobook.rc
+source ~/.mutt/gpg.rc
 
 
 # Account Settings, news
