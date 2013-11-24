@@ -27,7 +27,10 @@ done
 
 
 # Now, create the news-mailboxes file and mutt-news.rc
-NEWSBOXES_FILE="${DIR}/mailboxes-news"
+MUTTNEWS_SUBDIR="../mutt/config-news"
+NEWSBOXES_FILE="${DIR}/${MUTTNEWS_SUBDIR}/mailboxes-news"
+NEWSRC="${DIR}/${MUTTNEWS_SUBDIR}/mutt-news.rc"
+
 echo $(ls -A1 ${NDIR_LINKS}) > "${NEWSBOXES_FILE}-dirs"
 cp "${NEWSBOXES_FILE}-dirs" ${NEWSBOXES_FILE}
 
@@ -38,7 +41,6 @@ sed -i "s/\(.\)/ +${NDIR_NAME}\/\1/"    ${NEWSBOXES_FILE}
 # mutt-news.rc
 RCPREFIX="macro index,pager gw"
 RCSUFFIX="<enter>\" \"go news\""
-NEWSRC="${DIR}/mutt-news.rc"
 SYNCLINE="macro index O \"<shell-escape>maildir-feed ${NDIR_GLOBAL}<enter>\" \"synchronize news\""
 
 tr " " "\n" < "${NEWSBOXES_FILE}-dirs" > ${NEWSRC}  # cheesy whitespace handling
