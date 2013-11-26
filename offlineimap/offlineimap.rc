@@ -23,8 +23,8 @@ nametrans = lambda folder: { 'drafts':    '[Gmail]/Drafts',
 [Repository gmail-remote]
 maxconnections = 2
 type = Gmail
-remoteuser = joaopizani
-remotepasseval = keyring.get_password("localmail-gmail","joaopizani@gmail.com")
+remoteusereval = localmail_username
+remotepasseval = keyring.get_password("localmail-gmail", localmail_username)
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 realdelete = no

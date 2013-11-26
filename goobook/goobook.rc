@@ -1,9 +1,0 @@
-[DEFAULT]
-email: joaopizani@gmail.com
-passwordeval: ~/.goobook_getpass.sh
-
-# The following are optional, defaults are shown
-cache_filename: ~/.goobook_cache
-cache_expiry_hours: 2
-filter_groupless_contacts: yes
-

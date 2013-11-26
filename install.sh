@@ -20,8 +20,7 @@ ln -f -s ${DIR}/misc-tools/mutt-open             ${HOME}/bin/mutt-open
 ln -f -s ${DIR}/misc-tools/urlview               ${HOME}/.urlview
 
 # msmtp
-ln -f -s ${DIR}/msmtp/msmtp.rc                   ${HOME}/.msmtprc
-ln -f -s ${DIR}/msmtp/msmtp.log                  ${HOME}/.msmtp.log
+./msmtp/install.sh
 
 # offlineimap
 ln -f -s ${DIR}/offlineimap/offlineimap.rc       ${HOME}/.offlineimaprc
@@ -35,18 +34,20 @@ ln -s ${DIR}/misc-tools/delatt-maildir.sh        ${HOME}/bin/delatt-maildir.sh
 ln -s ${DIR}/misc-tools/archive-maildirs.sh      ${HOME}/bin/archive-maildirs.sh
 
 # goobook
-ln -f -s ${DIR}/goobook/goobook.rc               ${HOME}/.goobookrc
-chmod +x ${DIR}/goobook/goobook_getpass.sh
-ln -f -s ${DIR}/goobook/goobook_getpass.sh       ${HOME}/.goobook_getpass.sh
-touch ${DIR}/goobook/goobook_cache
-ln -f -s ${DIR}/goobook/goobook_cache            ${HOME}/.goobook_cache
+./goobook/install.sh
 
 
-read -r -d '' PYCMD <<'EOF'
+# Setting username and password in the system keyring
+
+EMAIL_ADDRESS_FILE="${DIR}/username-gmail"
+EMAIL_ADDRESS_FILE_LINK="${HOME}/.localmail-username-gmail"
+ln -s -f ${EMAIL_ADDRESS_FILE} ${EMAIL_ADDRESS_FILE_LINK}
+
+EMAIL_ADDRESS=$(cat ${EMAIL_ADDRESS_FILE_LINK})
+
+read -r -d '' PYCMD <<EOF
 import keyring
-em = raw_input("gmail-email-address> ")
-pw = raw_input("gmail-password-onetime> ")
-keyring.set_password("localmail-gmail", em, pw)
+keyring.set_password("localmail-gmail", ${EMAIL_ADDRESS}, raw_input("gmail-password > "))
 EOF
 
 python -c "$PYCMD"
