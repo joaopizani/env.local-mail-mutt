@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+MUTTSRCDIR_DEFAULT="${HOME}/.mail"
+IRCSRCDIR_DEFAULT="${HOME}/comm/irclogs"
+FINALTRGDIR_DEFAULT="${HOME}/data/comm-backup"
+
+MUTTSRCDIR=${1:-$MUTTSRCDIR_DEFAULT}
+IRCSRCDIR=${2:-$IRCSRCDIR_DEFAULT}
+FINALTRGDIR=${3:-$FINALTRGDIR_DEFAULT}
+
+SCRIPT_NAME="archive-comm"
+DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOGDIR="${DIR}/logs/${SCRIPT_NAME}"
+LOGDATE=$(date '+%Y-%m-%d_%H-%M-%S')
+LOGNAME="log_${SCRIPT_NAME}__${LOGDATE}.txt"
+LOGFILE="${LOGDIR}/${LOGNAME}"
+mkdir -p ${LOGDIR}
+
+COMMTMPDIR="/tmp"
+FMTDATE=$(date '+%Y-%m-%d')
+COMMBKPNAME="comm_bkp_${FMTDATE}"
+COMMBKPINI="${COMMTMPDIR}/${COMMBKPNAME}"
+MUTTBKPDIR="${COMMBKPINI}/mutt"
+IRCBKPDIR="${COMMBKPINI}/irclogs"
+mkdir -p ${MUTTBKPDIR} ${IRCBKPDIR}                      &> ${LOGFILE}
+
+${HOME}/bin/delatt-maildir ${MUTTSRCDIR} ${MUTTBKPDIR}   &> ${LOGFILE}
+cp -rv "${IRCSRCDIR}/" "${IRCBKPDIR}/"                   &> ${LOGFILE}
+
+( tar -cf - -C ${COMMTMPDIR} ${COMMBKPNAME} | gzip -9 - > "${COMMBKPINI}.tar.gz" ) 2> ${LOGFILE}
+mv "${COMMBKPINI}.tar.gz" "${FINALTRGDIR}/"              &> ${LOGFILE}
+rm -rf ${COMMBKPINI}                                     &> ${LOGFILE}

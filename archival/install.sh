@@ -8,6 +8,6 @@ git clone git://gist.github.com/6572826.git      ${DIR}/pydelatt
 chmod +x ${DIR}/pydelatt/pydelatt.py
 
 ln -s ${DIR}/pydelatt/pydelatt.py     ${HOME}/bin/pydelatt.py
-ln -s ${DIR}/delatt-maildir.sh        ${HOME}/bin/delatt-maildir.sh
-ln -s ${DIR}/archive-maildirs.sh      ${HOME}/bin/archive-maildirs.sh
+ln -s ${DIR}/delatt-maildir           ${HOME}/bin/delatt-maildir
+ln -s ${DIR}/archive-comm             ${HOME}/bin/archive-comm
 
