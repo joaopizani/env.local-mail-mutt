@@ -1,2 +1,1 @@
-*/30 * * * * offlineimap
-*/35 * * * * ${HOME}/bin/maildir-feed ${HOME}/.news
+*/30  *    *    *    *    offlineimap
