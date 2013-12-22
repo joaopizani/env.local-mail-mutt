@@ -34,7 +34,7 @@ ln -f -s ${DIR}/offlineimap/offlineimap.py       ${HOME}/.offlineimap.py
 
 
 # Setting username and password in the system keyring
-EMAIL_ADDRESS_FILE_LINK="${HOME}/.localmail-username-gmail"
+EMAIL_ADDRESS_FILE_LINK="${HOME}/.localmail-custom/username-gmail"
 EMAIL_ADDRESS=$(cat ${EMAIL_ADDRESS_FILE_LINK})
 
 read -r -d '' PYCMD <<EOF

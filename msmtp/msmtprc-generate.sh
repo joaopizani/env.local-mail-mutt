@@ -4,7 +4,7 @@ REL_SRC=${BASH_SOURCE[0]}
 CANONICAL_SRC=$(readlink -f $REL_SRC)
 DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
-EMAIL_ADDRESS_FILE_LINK="${HOME}/.localmail-username-gmail"
+EMAIL_ADDRESS_FILE_LINK="${HOME}/.localmail-custom/username-gmail"
 EMAIL_ADDRESS=$(cat ${EMAIL_ADDRESS_FILE_LINK})
 
 cat <<EOF > "${DIR}/msmtp.rc"
