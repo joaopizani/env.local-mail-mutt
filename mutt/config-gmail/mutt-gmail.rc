@@ -20,6 +20,6 @@ macro index,pager gci "<copy-message>+gmail/INBOX<enter>" "copy to inbox"
 
 
 # Personal GMail config
-source ~/.mutt-custom/gmail-personal-config
+source ~/.localmail-custom/gmail-personal-config
 
 
