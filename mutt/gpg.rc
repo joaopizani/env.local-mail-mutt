@@ -9,11 +9,4 @@ set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs 
 set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys %r" 
 set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r" 
 
-set pgp_autosign=yes
-set pgp_replyencrypt=yes
-set pgp_timeout=900
-set pgp_good_sign="^gpg: Good signature from"
-
-set pgp_sign_as=0xB82C6ACC
-set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0xB82C6AC C-- -r %r -- %f"
-set pgp_encrypt_sign_command="pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0xB82C6ACC -- -r %r -- %f"
+source ~/.localmail-custom/gpg-personal-config
