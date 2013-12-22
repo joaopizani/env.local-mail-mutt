@@ -151,7 +151,7 @@ bind index p recall-message
 
 
 # Mailboxes
-mailboxes `cat ~/.mutt/config-gmail/mailboxes-gmail ~/.mutt/config-news/mailboxes-news | tr -d "\n"`
+mailboxes `cat ~/.mutt/config-gmail/mailboxes-gmail ~/.localmail-custom/gmail-personal-mailboxes ~/.mutt/config-news/mailboxes-news | tr -d "\n"`
 
 
 # Extra configs
