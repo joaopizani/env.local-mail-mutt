@@ -39,7 +39,7 @@ EMAIL_ADDRESS=$(cat ${EMAIL_ADDRESS_FILE_LINK})
 
 read -r -d '' PYCMD <<EOF
 import keyring
-keyring.set_password("localmail-gmail", ${EMAIL_ADDRESS}, raw_input("gmail-password > "))
+keyring.set_password("localmail-gmail", "${EMAIL_ADDRESS}", raw_input("gmail-password > "))
 EOF
 
 python -c "$PYCMD"
