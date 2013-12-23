@@ -3,13 +3,13 @@
 SRCDIR=${1}
 TRGDIR=${2}
 
-mkdir -p ${TRGDIR}
+mkdir -p "${TRGDIR}"
 
-cd ${SRCDIR}
+cd "${SRCDIR}"
 
-find -type d -exec mkdir -p ${TRGDIR}/{} \;
+find -type d -exec mkdir -p "${TRGDIR}"/{} \;
 
 for f in $(find -type f); do
-    ${HOME}/bin/pydelatt.py -o -t ${f} > "${TRGDIR}/${f}"
+    "${HOME}/bin/pydelatt.py" -o -t "${f}" > "${TRGDIR}/${f}"
 done
 

@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
 
 REL_SRC=${BASH_SOURCE[0]}
-CANONICAL_SRC=$(readlink -f $REL_SRC)
+CANONICAL_SRC=$(readlink -f "$REL_SRC")
 DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
-mkdir -p ${HOME}/bin
+mkdir -p "${HOME}/bin"
 
 # mail directories, mutt directories and mu directories
-mkdir -p ${HOME}/comm/mutt
-ln -f -s ${HOME}/comm/mutt                       ${HOME}/.mail
-mkdir -p ${DIR}/mu/{cache,xapian,results,log}
-ln -f -s ${DIR}/mu                               ${HOME}/.mu
+mkdir -p "${HOME}/comm/mutt"
+ln -f -s "${HOME}/comm/mutt"                       "${HOME}/.mail"
+mkdir -p "${DIR}/mu/{cache,xapian,results,log}"
+ln -f -s "${DIR}/mu"                               "${HOME}/.mu"
 
-ln -f -s ${DIR}/mutt                             ${HOME}/.mutt
-mkdir -p ${HOME}/Downloads/mutt-attachments
+ln -f -s "${DIR}/mutt"                             "${HOME}/.mutt"
+mkdir -p "${HOME}/Downloads/mutt-attachments"
 
 # mutt-open and urlview
-ln -f -s ${DIR}/misc-tools/mutt-open             ${HOME}/bin/mutt-open
-ln -f -s ${DIR}/misc-tools/urlview               ${HOME}/.urlview
+ln -f -s "${DIR}/misc-tools/mutt-open"             "${HOME}/bin/mutt-open"
+ln -f -s "${DIR}/misc-tools/urlview"               "${HOME}/.urlview"
+
+# offlineimap
+ln -f -s "${DIR}/offlineimap/offlineimap.rc"       "${HOME}/.offlineimaprc"
+ln -f -s "${DIR}/offlineimap/offlineimap.py"       "${HOME}/.offlineimap.py"
 
 # msmtp
 "${DIR}/msmtp/install.sh"
-
-# offlineimap
-ln -f -s ${DIR}/offlineimap/offlineimap.rc       ${HOME}/.offlineimaprc
-ln -f -s ${DIR}/offlineimap/offlineimap.py       ${HOME}/.offlineimap.py
 
 # archival, etc.
 "${DIR}/archival/install.sh"
@@ -35,7 +35,7 @@ ln -f -s ${DIR}/offlineimap/offlineimap.py       ${HOME}/.offlineimap.py
 
 # Setting username and password in the system keyring
 EMAIL_ADDRESS_FILE_LINK="${HOME}/.localmail-custom/username-gmail"
-EMAIL_ADDRESS=$(cat ${EMAIL_ADDRESS_FILE_LINK})
+EMAIL_ADDRESS=$(cat "${EMAIL_ADDRESS_FILE_LINK}")
 
 read -r -d '' PYCMD <<EOF
 import keyring
