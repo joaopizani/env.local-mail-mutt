@@ -20,17 +20,17 @@ ln -f -s ${DIR}/misc-tools/mutt-open             ${HOME}/bin/mutt-open
 ln -f -s ${DIR}/misc-tools/urlview               ${HOME}/.urlview
 
 # msmtp
-./msmtp/install.sh
+"${DIR}/msmtp/install.sh"
 
 # offlineimap
 ln -f -s ${DIR}/offlineimap/offlineimap.rc       ${HOME}/.offlineimaprc
 ln -f -s ${DIR}/offlineimap/offlineimap.py       ${HOME}/.offlineimap.py
 
 # archival, etc.
-./archival/install.sh
+"${DIR}/archival/install.sh"
 
 # goobook
-./goobook/install.sh
+"${DIR}/goobook/install.sh"
 
 
 # Setting username and password in the system keyring

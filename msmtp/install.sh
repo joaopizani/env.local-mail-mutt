@@ -5,8 +5,8 @@ CANONICAL_SRC=$(readlink -f $REL_SRC)
 DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
 
-./msmtprc-generate.sh
-ln -f -s ${DIR}/msmtp.rc     ${HOME}/.msmtprc
+"${DIR}/msmtprc-generate.sh"
+ln -f -s "${DIR}/msmtp.rc"     "${HOME}/.msmtprc"
 
-ln -f -s ${DIR}/msmtp.log    ${HOME}/.msmtp.log
+ln -f -s "${DIR}/msmtp.log"    "${HOME}/.msmtp.log"
 
