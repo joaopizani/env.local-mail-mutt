@@ -6,7 +6,7 @@ DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
 
 "${DIR}/msmtprc-generate.sh"
-ln -f -s "${DIR}/msmtp.rc"     "${HOME}/.msmtprc"
+ln -f -s -n "${DIR}/msmtp.rc"     "${HOME}/.msmtprc"
 
-ln -f -s "${DIR}/msmtp.log"    "${HOME}/.msmtp.log"
+ln -f -s -n "${DIR}/msmtp.log"    "${HOME}/.msmtp.log"
 
