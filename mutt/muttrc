@@ -52,11 +52,15 @@ hdr_order from: to: cc: date: subject:  # and in this order
 set date_format = "%Y-%m-%d %H:%M%z"
 set index_format = "%?M?(#%03M)&(%4l)? [%Z] %D  %-20.20F  %s"
 set sort = threads                         # like gmail
-set sort_aux = reverse-last-date-received  # like gmail
+set sort_browser = reverse-date
+set sort_aux = reverse-last-date-received
+set strict_threads = yes
 set uncollapse_jump                        # don't collapse on an unread message
 folder-hook . "exec collapse-all"
-set sort_re                                # thread based on regex
-set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# deleting (muting) threads of which the parent msg was intentionally deleted
+macro index \Cw '<tag-pattern>!~(!~h References: | ~F |~s Fwd:|~s FW:|~C "$realname"|~f "$realname")<enter><tag-prefix-cond><delete-message><end-cond>'
+
 
 # Index Key Bindings
 bind index gg       first-entry
