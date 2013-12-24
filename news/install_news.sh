@@ -5,7 +5,7 @@ CANONICAL_SRC=$(readlink -f "$REL_SRC")
 DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
 mkdir -p "${HOME}/.cache/rss2maildir" "${HOME}/.config/rss2maildir"
-ln -f -s "${DIR}/feeds.json" "${HOME}/.config/rss2maildir/feeds.json"
+ln -f -s -n "${DIR}/feeds.json" "${HOME}/.config/rss2maildir/feeds.json"
 
 NDIR_NAME="news"
 MUTTROOT="${HOME}/comm/mutt"
@@ -21,7 +21,7 @@ maildir-feed "${NDIR_GLOBAL}"
 CNT=0
 rm -f ${NDIR_LINKS}/*
 for n in $(ls -A1 "${NDIR_TRUE}"); do
-    ln -f -s "${NDIR_TRUE}/${n}" "${NDIR_LINKS}/$(printf %02d ${CNT})_$(echo ${n} | sed 's/^.//')"
+    ln -f -s -n "${NDIR_TRUE}/${n}" "${NDIR_LINKS}/$(printf %02d ${CNT})_$(echo ${n} | sed 's/^.//')"
     (( CNT++ ))
 done
 
