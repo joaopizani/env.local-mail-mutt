@@ -17,8 +17,7 @@ ln -f -s -n "${DIR}/mutt/themes/inkpot-256.theme"     "${DIR}/mutt/themes/curren
 ln -f -s -n "${DIR}/mutt"                             "${HOME}/.mutt"
 
 # mutt-open and urlview
-ln -f -s -n "${DIR}/misc-tools/mutt-open"             "${HOME}/bin/mutt-open"
-ln -f -s -n "${DIR}/misc-tools/urlview"               "${HOME}/.urlview"
+ln -f -s -n "${DIR}/archival/mutt-open"               "${HOME}/bin/mutt-open"
 
 # offlineimap
 ln -f -s -n "${DIR}/offlineimap/offlineimap.rc"       "${HOME}/.offlineimaprc"
