@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REL_SRC=${BASH_SOURCE[0]}
+REL_SRC="${BASH_SOURCE[0]}"
 CANONICAL_SRC=$(readlink -f "$REL_SRC")
 DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
 
@@ -14,7 +14,7 @@ NDIR_LINKS="${MUTTROOT}/${NDIR_NAME}"
 NDIR_GLOBAL="${HOME}/.news"
 
 mkdir -p "${NDIR_TRUE}" "${NDIR_LINKS}"
-ln -f -s -T "${NDIR_TRUE}" "${NDIR_GLOBAL}"
+ln -f -s -n "${NDIR_TRUE}" "${NDIR_GLOBAL}"
 
 maildir-feed "${NDIR_GLOBAL}"
 

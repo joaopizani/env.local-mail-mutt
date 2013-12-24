@@ -23,13 +23,11 @@ ln -f -s -n "${DIR}/archival/mutt-open"               "${HOME}/bin/mutt-open"
 ln -f -s -n "${DIR}/offlineimap/offlineimap.rc"       "${HOME}/.offlineimaprc"
 ln -f -s -n "${DIR}/offlineimap/offlineimap.py"       "${HOME}/.offlineimap.py"
 
-# msmtp
+
 "${DIR}/msmtp/install.sh"
 
-# archival, etc.
 "${DIR}/archival/install.sh"
 
-# goobook
 "${DIR}/goobook/install.sh"
 
 
