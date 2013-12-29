@@ -23,3 +23,5 @@ account default : gmail
 logfile ~/.msmtp.log
 EOF
 
+chmod 600 "${DIR}/msmtp.rc"
+
