@@ -5,6 +5,7 @@ CANONICAL_SRC=$(readlink -f "${REL_SRC}")
 DIR="$(cd -P "$(dirname "${CANONICAL_SRC}")" && pwd)"
 
 mkdir -p "${HOME}/.cache/rss2maildir" "${HOME}/.config/rss2maildir"
+mkdir -p "${HOME}/.localmail-custom"
 cp --no-clobber "${DIR}/feeds.json.sample" "${HOME}/.localmail-custom/feeds.json"
 ln -f -s -n "${HOME}/.localmail-custom/feeds.json" "${HOME}/.config/rss2maildir/feeds.json"
 
