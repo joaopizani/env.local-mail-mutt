@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 REL_SRC="${BASH_SOURCE[0]}"
-CANONICAL_SRC=$(readlink -f "$REL_SRC")
-DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
+CANONICAL_SRC=$(readlink -f "${REL_SRC}")
+DIR="$(cd -P "$(dirname "${CANONICAL_SRC}")" && pwd)"
 
 mkdir -p "${HOME}/.cache/rss2maildir" "${HOME}/.config/rss2maildir"
-ln -f -s -n "${DIR}/feeds.json" "${HOME}/.config/rss2maildir/feeds.json"
+cp --no-clobber "${DIR}/feeds.json.sample" "${HOME}/.localmail-custom/feeds.json"
+ln -f -s -n "${HOME}/.localmail-custom/feeds.json" "${HOME}/.config/rss2maildir/feeds.json"
 
 NDIR_NAME="news"
 MUTTROOT="${HOME}/comm/mutt"
@@ -19,7 +20,7 @@ ln -f -s -n "${NDIR_TRUE}" "${NDIR_GLOBAL}"
 maildir-feed "${NDIR_GLOBAL}"
 
 CNT=0
-rm -f ${NDIR_LINKS}/*
+rm -f "${NDIR_LINKS}"/*
 for n in $(ls -A1 "${NDIR_TRUE}"); do
     ln -f -s -n "${NDIR_TRUE}/${n}" "${NDIR_LINKS}/$(printf %02d ${CNT})_$(echo ${n} | sed 's/^.//')"
     (( CNT++ ))
