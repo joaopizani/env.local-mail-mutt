@@ -29,9 +29,8 @@ done
 
 
 # Now, create the news-mailboxes file and mutt-news.rc
-MUTTNEWS_SUBDIR="../mutt/config-news"
-NEWSBOXES_FILE="${DIR}/${MUTTNEWS_SUBDIR}/mailboxes-news"
-NEWSRC="${DIR}/${MUTTNEWS_SUBDIR}/mutt-news.rc"
+NEWSBOXES_FILE="${DIR}/mailboxes-news"
+NEWSRC="${DIR}/mutt-news.rc"
 
 echo $(ls -A1 "${NDIR_LINKS}") > "${NEWSBOXES_FILE}-dirs"
 cp "${NEWSBOXES_FILE}-dirs"  "${NEWSBOXES_FILE}"

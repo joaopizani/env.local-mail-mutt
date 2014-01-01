@@ -1,6 +1,3 @@
-set my_mutthome_abs=`readlink -f "${HOME}/.mutt"` 
-
-
 source ~/.mutt/mutt-basic.rc
 source ~/.mutt/mutt-status-sidebar.rc
 source ~/.mutt/mutt-index-view.rc
@@ -12,7 +9,7 @@ source ~/.mutt/mutt-pager-view.rc
 source ~/.mutt/mutt-composing-view.rc
 
 # Mailboxes
-mailboxes `cat ~/.mutt/config-gmail/mailboxes-gmail ~/.localmail-custom/gmail-personal-mailboxes ~/.mutt/config-news/mailboxes-news | tr -d "\n"`
+mailboxes `cat ~/.mutt/config-gmail/mailboxes-gmail ~/.localmail-custom/gmail-personal-mailboxes "$(F="$(readlink -f "${HOME}/.mutt")/../news/mailboxes-news"; if [ ! -s "$F" ]; then F=/dev/null; fi; echo "$F")" | tr -d "\n"`
 
 # Extra configs
 source ~/.mutt/themes/current-theme.rc
@@ -22,5 +19,5 @@ source ~/.mutt/mutt-gpg.rc
 
 # Account Settings, news
 source ~/.mutt/config-gmail/mutt-gmail.rc
-source `F="$my_mutthome_abs/config-news/mutt-news.rc"; if [ ! -s "$F" ]; then F=/dev/null; fi; echo "$F"` 
+source `F="$(readlink -f "${HOME}/.mutt")/../news/mutt-news.rc"; if [ ! -s "$F" ]; then F=/dev/null; fi; echo "$F"` 
 
