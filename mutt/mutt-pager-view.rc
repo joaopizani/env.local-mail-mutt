@@ -1,11 +1,11 @@
 # Pager View Options
-set pager_index_lines = 10 # number of index lines to show
-set pager_context = 3      # number of context lines to show
-set pager_stop             # don't go to next message automatically
-set menu_scroll            # scroll in menus
-set tilde                  # show tildes like in vim
-unset markers              # no ugly plus signs
-set print_command = "muttprint -p - | ps2pdf - ~/mail-print-$(date '+%Y-%m-%d_%H-%M-%S').pdf"
+set pager_index_lines = 10  # number of index lines to show
+set pager_context = 3  # number of context lines to show
+set pager_stop  # don't go to next message automatically
+set menu_scroll  # scroll in menus
+set tilde  # show tildes like in vim
+unset markers  # no ugly plus signs
+set print_command = "muttprint -p - | ps2pdf - ~/mutt-print-$(date '+%Y-%m-%d_%H-%M-%S').pdf"
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 
 # Pager Key Bindings
