@@ -1,0 +1,30 @@
+# Index View Options
+set date_format = "%Y-%m-%d %H:%M%z"
+set index_format = "%?M?(#%03M)&(%4l)? [%Z] %D  %-20.20F  %s"
+set sort = threads  # like gmail
+set sort_browser = reverse-date
+set sort_aux = reverse-last-date-received
+set strict_threads = yes
+set uncollapse_jump  # don't collapse on an unread message
+folder-hook . "exec collapse-all"
+
+# deleting (muting) threads of which the parent msg was intentionally deleted
+macro index \Cw '<tag-pattern>!~(!~h References: | ~F |~s Fwd:|~s FW:|~C "$realname"|~f "$realname")<enter><tag-prefix-cond><delete-message><end-cond>'
+
+# Index Key Bindings
+bind index gg       first-entry
+bind index G        last-entry
+bind index R        group-reply
+bind index <tab>    sync-mailbox
+bind index <space>  collapse-thread
+bind index _        collapse-all
+
+macro index a "<limit>all\n" "show all messages (undo limit)"
+
+# Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+

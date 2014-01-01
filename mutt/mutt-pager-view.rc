@@ -1,0 +1,38 @@
+# Pager View Options
+set pager_index_lines = 10 # number of index lines to show
+set pager_context = 3      # number of context lines to show
+set pager_stop             # don't go to next message automatically
+set menu_scroll            # scroll in menus
+set tilde                  # show tildes like in vim
+unset markers              # no ugly plus signs
+set print_command = "muttprint -p - | ps2pdf - ~/mail-print-$(date '+%Y-%m-%d_%H-%M-%S').pdf"
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+
+# Pager Key Bindings
+bind pager k  previous-line
+bind pager j  next-line
+bind pager gg top
+bind pager G  bottom
+bind pager R  group-reply
+
+# Header Options
+ignore *                                # ignore all headers
+unignore from: to: cc: date: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order from: to: cc: date: subject:  # and in this order
+
+# View attachments properly.
+bind attach <return> view-mailcap
+
+# Saving attachments to a single, standardized directory, GIVING choice
+macro attach w "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/"
+macro attach e "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/<enter>"
+
+# HTML embedding
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# URL Scan
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs"
+

@@ -1,171 +1,26 @@
-# Paths
-set folder           = ~/.mail                  # mailbox location
-set alias_file       = ~/.mutt/alias            # where to store aliases
-set header_cache     = ~/.mutt/cache/headers    # where to store headers
-set message_cachedir = ~/.mutt/cache/bodies     # where to store bodies
-set certificate_file = ~/.mutt/certificates     # where to store certs
-set mailcap_path     = ~/.mutt/mailcap          # entries for filetypes
-set tmpdir           = /tmp                     # where to keep temp files
-set signature        = ~/.localmail-custom/sig  # my signature file
+set my_mutthome_abs=`readlink -f "${HOME}/.mutt"` 
 
 
-# Basic Options
-set wait_key = no        # shut up, mutt
-set mbox_type = Maildir  # mailbox type
-set timeout = 3          # idle time before scanning
-set mail_check = 0       # minimum time between scans
-unset move               # gmail does that
-set delete               # don't ask, just do
-unset confirmappend      # don't ask, just do!
-set quit                 # don't ask, just do!!
-unset mark_old           # read/new is good enough for me
-set beep_new             # bell on new mails
-set pipe_decode          # strip headers and eval mimes when piping
-set thorough_search      # strip headers and eval mimes before searching
-set sleep_time = 0
-
-
-# Sidebar
-set sidebar_delim   = ' │'
-set sidebar_visible = yes
-set sidebar_width   = 35
-color sidebar_new color221 color233
-
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
-
-
-# Status Bar
-set status_chars  = " *%A"
-set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
-
-
-# Header Options
-ignore *                                # ignore all headers
-unignore from: to: cc: date: subject:   # show only these
-unhdr_order *                           # some distros order things by default
-hdr_order from: to: cc: date: subject:  # and in this order
-
-
-# Index View Options
-set date_format = "%Y-%m-%d %H:%M%z"
-set index_format = "%?M?(#%03M)&(%4l)? [%Z] %D  %-20.20F  %s"
-set sort = threads                         # like gmail
-set sort_browser = reverse-date
-set sort_aux = reverse-last-date-received
-set strict_threads = yes
-set uncollapse_jump                        # don't collapse on an unread message
-folder-hook . "exec collapse-all"
-
-# deleting (muting) threads of which the parent msg was intentionally deleted
-macro index \Cw '<tag-pattern>!~(!~h References: | ~F |~s Fwd:|~s FW:|~C "$realname"|~f "$realname")<enter><tag-prefix-cond><delete-message><end-cond>'
-
-
-# Index Key Bindings
-bind index gg       first-entry
-bind index G        last-entry
-bind index R        group-reply
-bind index <tab>    sync-mailbox
-bind index <space>  collapse-thread
-bind index _        collapse-all
-
-macro index a "<limit>all\n" "show all messages (undo limit)"
-
-# Ctrl-R to mark all as read
-macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
-
+source ~/.mutt/mutt-basic.rc
+source ~/.mutt/mutt-status-sidebar.rc
+source ~/.mutt/mutt-index-view.rc
 
 # Sync email
 macro index o "<shell-escape>offlineimap<enter>"  "run offlineimap to sync all mail"
 
-
-# Saner copy/move dialogs
-macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
-
-
-# Pager View Options
-set pager_index_lines = 10 # number of index lines to show
-set pager_context = 3      # number of context lines to show
-set pager_stop             # don't go to next message automatically
-set menu_scroll            # scroll in menus
-set tilde                  # show tildes like in vim
-unset markers              # no ugly plus signs
-set print_command = "muttprint -p - | ps2pdf - ~/mail-print-$(date '+%Y-%m-%d_%H-%M-%S').pdf"
-set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-
-
-# Pager Key Bindings
-bind pager k  previous-line
-bind pager j  next-line
-bind pager gg top
-bind pager G  bottom
-bind pager R  group-reply
-
-
-# View attachments properly.
-bind attach <return> view-mailcap
-
-# Saving attachments to a single, standardized directory, GIVING choice
-macro attach w "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/"
-macro attach e "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/<enter>"
-
-# HTML embedding
-auto_view text/html
-alternative_order text/plain text/enriched text/html
-
-
-# URL Scan
-macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs"
-macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs"
-
-
-# Compose View Options
-set realname = "João Paulo Pizani Flor"        # who am i?
-set envelope_from                              # which from?
-set sig_dashes                                 # dashes before sig
-set sig_on_top
-set edit_headers                               # show headers when composing
-set fast_reply                                 # skip to compose when replying
-set askcc                                      # ask for CC:
-set fcc_attach                                 # save attachments with the body
-unset mime_forward                             # forward attachments as part of body
-set forward_format = "Fwd: %s"                 # format of subject when forwarding
-set forward_decode                             # decode when forwarding
-set attribution = "On %d, %n wrote:"           # format of quoting header
-set reply_to                                   # reply to Reply to: field
-set reverse_name                               # reply as whomever it was to
-set include                                    # include message in replies
-set forward_quote                              # include message in forwards
-set editor = "vim"
-set text_flowed=yes                            # format=flowed
-
-
-# Sending email options
-set sendmail = "msmtp"
-set sendmail_wait = 0
-
-# save sent in the folder where replied from
-folder-hook . "set record=^"
-
-# Postponing etc.
-bind compose p postpone-message
-bind index p recall-message
-
+source ~/.mutt/mutt-pager-view.rc
+source ~/.mutt/mutt-composing-view.rc
 
 # Mailboxes
 mailboxes `cat ~/.mutt/config-gmail/mailboxes-gmail ~/.localmail-custom/gmail-personal-mailboxes ~/.mutt/config-news/mailboxes-news | tr -d "\n"`
-
 
 # Extra configs
 source ~/.mutt/themes/current-theme.rc
 source ~/.mutt/mutt-mu-search.rc
 source ~/.mutt/mutt-goobook.rc
-source ~/.mutt/gpg.rc
-
+source ~/.mutt/mutt-gpg.rc
 
 # Account Settings, news
 source ~/.mutt/config-gmail/mutt-gmail.rc
-source ~/.mutt/config-news/mutt-news.rc
+source `F="$my_mutthome_abs/config-news/mutt-news.rc"; if [ ! -s "$F" ]; then F=/dev/null; fi; echo "$F"` 
 

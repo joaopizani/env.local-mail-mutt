@@ -1,0 +1,31 @@
+# Compose View Options
+set realname = "João Paulo Pizani Flor"        # who am i?
+set envelope_from                              # which from?
+set sig_dashes                                 # dashes before sig
+set sig_on_top
+set edit_headers                               # show headers when composing
+set fast_reply                                 # skip to compose when replying
+set askcc                                      # ask for CC:
+set fcc_attach                                 # save attachments with the body
+unset mime_forward                             # forward attachments as part of body
+set forward_format = "Fwd: %s"                 # format of subject when forwarding
+set forward_decode                             # decode when forwarding
+set attribution = "On %d, %n wrote:"           # format of quoting header
+set reply_to                                   # reply to Reply to: field
+set reverse_name                               # reply as whomever it was to
+set include                                    # include message in replies
+set forward_quote                              # include message in forwards
+set editor = "vim"
+set text_flowed=yes                            # format=flowed
+
+# Sending email options
+set sendmail = "msmtp"
+set sendmail_wait = 0
+
+# save sent in the folder where replied from
+folder-hook . "set record=^"
+
+# Postponing etc.
+bind compose p postpone-message
+bind index p recall-message
+
