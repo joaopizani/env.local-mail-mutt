@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-REL_SRC=${BASH_SOURCE[0]}
-CANONICAL_SRC=$(readlink -f $REL_SRC)
-DIR="$(cd -P "$(dirname $CANONICAL_SRC)" && pwd)"
+DIR="$(cd -P "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd)"
 
 "${DIR}/goobookrc-generate.sh"
 ln -f -s -n "${DIR}/goobook.rc"             "${HOME}/.goobookrc"
