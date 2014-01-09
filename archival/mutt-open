@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-NEWFILE="/tmp/mutt_open_$(basename "$1")_$(date '+%Y-%m-%d_%H-%M-%S')"
+FILENAME="$(basename "${1}")"
+
+FILE_EXT="${FILENAME##*.}"
+FILE_PREFIX="${FILENAME%.*}"
+
+NEWFILE="/tmp/mutt_open_${FILE_PREFIX}_$(date '+%Y-%m-%d_%H-%M-%S').${FILE_EXT}"
 rm -f "${NEWFILE}"
 cp "$1" "${NEWFILE}" 1>/dev/null 2>&1
 xdg-open 2>/dev/null "${NEWFILE}"
