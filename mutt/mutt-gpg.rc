@@ -8,5 +8,8 @@ set pgp_export_command="gpg --no-verbose --export --armor %r"
 set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"
 set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys %r" 
 set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r" 
+set pgp_good_sign="^gpg: Good signature from"
+set crypt_verify_sig=yes
+set pgp_timeout=240
 
 source ~/.localmail-custom/gpg-personal-config
