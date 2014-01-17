@@ -19,6 +19,10 @@ bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
 bind index _        collapse-all
 
+bind index n        toggle-new
+bind index N        search-next
+
+
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
 # Ctrl-R to mark all as read
