@@ -19,7 +19,7 @@ ln -f -s -n "${NDIR_TRUE}" "${NDIR_GLOBAL}"
 maildir-feed "${NDIR_GLOBAL}"
 
 CNT=0
-rm -f "${NDIR_LINKS}"/*
+rm -f "${NDIR_LINKS}"/*   # removing all links before trying to install new ones.
 for n in $(ls -A1 "${NDIR_TRUE}"); do
     ln -f -s -n "${NDIR_TRUE}/${n}" "${NDIR_LINKS}/$(printf %02d ${CNT})_$(echo ${n} | sed 's/^.//')"
     (( CNT++ ))
