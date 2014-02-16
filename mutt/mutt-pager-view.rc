@@ -21,18 +21,18 @@ unignore from: to: cc: date: subject:   # show only these
 unhdr_order *                           # some distros order things by default
 hdr_order from: to: cc: date: subject:  # and in this order
 
-# View attachments properly.
-bind attach <return> view-mailcap
-
 # Saving attachments to a single, standardized directory, GIVING choice
-macro attach w "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/"
-macro attach e "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/<enter>"
+macro attach e "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/"
+macro attach w "<tag-prefix><save-entry><kill-line>~/Downloads/mutt-attachments/<enter>"
 
 # HTML embedding
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
+# View the HTML part in attachments
+macro index,pager V "<view-attachments><search>text/html<enter><view-mailcap>"
+
 # URL Scan
-macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs"
-macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs"
+macro index,pager \cb ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
+macro attach,compose \cb ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
 

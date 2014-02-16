@@ -18,7 +18,9 @@ mkdir -p "${DIR}/mu/{cache,xapian,results,log}"
 ln -f -s -n "${DIR}/mu"                               "${HOME}/.mu"
 
 
-# mutt-open and urlview
+# mutt-open and w3m config for viewing URLs
+mkdir -p "${HOME}/.w3m"
+ln -f -s -n "${DIR}/w3m-config"                       "${HOME}/.w3m/config"
 ln -f -s -n "${DIR}/archival/mutt-open"               "${HOME}/bin/mutt-open"
 
 # offlineimap
