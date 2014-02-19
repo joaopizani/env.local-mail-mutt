@@ -1,2 +1,2 @@
-*/30  *     *    *    *    offlineimap -u quiet
+02    *     *    *    *    offlineimap -u quiet
 00    02    *    *    1    $HOME/bin/archive-comm
