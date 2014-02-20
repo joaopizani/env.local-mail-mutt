@@ -93,7 +93,7 @@ wrap_search 0
 mark_all_pages 1
 vi_prec_num 0
 emacs_like_lineedit 0
-mark 0
+mark 1
 close_tab_back 0
 confirm_qq 0
 save_hist 0
@@ -138,7 +138,7 @@ ext_dirlist 1
 display_lineinfo 0
 decode_url 1
 display_link_number 0
-display_link 0
+display_link 1
 open_tab_dl_list 0
 open_tab_blank 1
 target_self 0
