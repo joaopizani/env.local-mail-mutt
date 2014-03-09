@@ -21,12 +21,14 @@ bind index _        collapse-all
 
 bind index n        toggle-new
 bind index N        search-next
+bind index T        tag-thread
+bind index <Esc>t   tag-pattern
 
 
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
 # Ctrl-R to mark all as read
-macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+macro index \Cr "<tag-pattern>~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
