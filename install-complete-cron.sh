@@ -2,10 +2,7 @@
 
 DIR="$(cd -P "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd)"
 
-echo "Installing prerequisite packages"
-sudo apt-get install $(cat ubuntu-packages-needed)
+"${DIR}/install-basic.sh"
 
 cat <(crontab -l) "cron-jobs" | crontab -
-
-"${DIR}/install-basic.sh"
 

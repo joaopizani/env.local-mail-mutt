@@ -2,6 +2,10 @@
 
 DIR="$(cd -P "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd)"
 
+
+sudo apt-get install $(cat ubuntu-packages-needed)
+
+
 mkdir -p "${HOME}/bin"
 
 # mail directories, mutt directories and mu directories
