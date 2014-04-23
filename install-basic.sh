@@ -3,7 +3,7 @@
 DIR="$(cd -P "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd)"
 
 
-sudo apt-get install $(cat ubuntu-packages-needed)
+sudo apt-get install $(cat "${DIR}/ubuntu-packages-needed")
 
 
 mkdir -p "${HOME}/bin"

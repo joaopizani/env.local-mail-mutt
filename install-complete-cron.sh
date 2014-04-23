@@ -4,5 +4,5 @@ DIR="$(cd -P "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd)"
 
 "${DIR}/install-basic.sh"
 
-cat <(crontab -l) "cron-jobs" | crontab -
+cat <(crontab -l) "${DIR}/cron-jobs" | crontab -
 
