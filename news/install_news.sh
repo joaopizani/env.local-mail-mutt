@@ -2,8 +2,7 @@
 
 DIR="$(cd -P "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd)"
 
-mkdir -p "${HOME}/.cache/rss2maildir" "${HOME}/.config/rss2maildir"
-mkdir -p "${HOME}/.localmail-custom"
+mkdir -p "${HOME}/.cache/rss2maildir" "${HOME}/.config/rss2maildir"  "${HOME}/.localmail-custom"
 cp --no-clobber "${DIR}/feeds.json.sample" "${HOME}/.localmail-custom/feeds.json"
 ln -f -s -n "${HOME}/.localmail-custom/feeds.json" "${HOME}/.config/rss2maildir/feeds.json"
 
@@ -16,7 +15,7 @@ NDIR_GLOBAL="${HOME}/.news"
 mkdir -p "${NDIR_TRUE}" "${NDIR_LINKS}"
 ln -f -s -n "${NDIR_TRUE}" "${NDIR_GLOBAL}"
 
-maildir-feed "${NDIR_GLOBAL}"
+maildir-feed "${NDIR_GLOBAL}"  # assumes that maildir-feed is already installed and on PATH
 
 CNT=0
 rm -f "${NDIR_LINKS}"/*   # removing all links before trying to install new ones.

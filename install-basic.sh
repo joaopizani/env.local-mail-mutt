@@ -12,8 +12,7 @@ mkdir -p "${HOME}/bin"
 mkdir -p "${HOME}/comm/mutt"
 ln -f -s -n "${HOME}/comm/mutt"                       "${HOME}/.mail"
 
-mkdir -p "${DIR}/mutt/temp"
-touch "${DIR}/mutt/cache/"{"headers","bodies"}
+mkdir -p "${DIR}/mutt/temp"  &&  touch "${DIR}/mutt/cache/"{"headers","bodies"}
 mkdir -p "${HOME}/Downloads/mutt-attachments"
 ln -f -s -n "${DIR}/mutt/themes/inkpot-256.theme"     "${DIR}/mutt/themes/current-theme.rc"
 ln -f -s -n "${DIR}/mutt"                             "${HOME}/.mutt"
@@ -33,9 +32,7 @@ ln -f -s -n "${DIR}/offlineimap/offlineimap.py"       "${HOME}/.offlineimap.py"
 
 
 "${DIR}/msmtp/install.sh"
-
 "${DIR}/archival/install.sh"
-
 "${DIR}/goobook/install.sh"
 
 
