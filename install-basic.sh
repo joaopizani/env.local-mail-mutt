@@ -4,6 +4,7 @@ DIR="$(cd -P "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd)"
 
 
 sudo apt-get install $(cat "${DIR}/ubuntu-packages-needed")
+sudo pip install goobook
 
 
 mkdir -p "${HOME}/bin"
