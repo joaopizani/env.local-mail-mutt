@@ -1,5 +1,5 @@
 [general]
-ui = blinkenlights
+ui = basic
 accounts = gmail
 pythonfile=~/.offlineimap.py
 fsync = False
