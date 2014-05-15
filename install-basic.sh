@@ -7,31 +7,24 @@ sudo apt-get install $(cat "${DIR}/ubuntu-packages-needed")
 sudo pip install goobook
 
 
-mkdir -p "${HOME}/bin"
-
-# mail directories, mutt directories and mu directories
 mkdir -p "${HOME}/comm/mutt"
-ln -f -s -n "${HOME}/comm/mutt"                       "${HOME}/.mail"
-
 mkdir -p "${DIR}/mutt/temp"  &&  touch "${DIR}/mutt/cache/"{"headers","bodies"}
 mkdir -p "${HOME}/Downloads/mutt-attachments"
-ln -f -s -n "${DIR}/mutt/themes/inkpot-256.theme"     "${DIR}/mutt/themes/current-theme.rc"
-ln -f -s -n "${DIR}/mutt"                             "${HOME}/.mutt"
+
+ln -f -s -n "${HOME}/comm/mutt"  "${HOME}/.mail"
+ln -f -s -n "${DIR}/mutt"        "${HOME}/.mutt"
+
+ln -f -s -n "${DIR}/mutt/themes/inkpot-256.theme"  "${DIR}/mutt/themes/current-theme.rc"
 
 mkdir -p "${DIR}/mu/{cache,xapian,results,log}"
-ln -f -s -n "${DIR}/mu"                               "${HOME}/.mu"
+ln -f -s -n "${DIR}/mu"  "${HOME}/.mu"
 
+ln -f -s -n "${DIR}/archival/mutt-open"  "${HOME}/bin/mutt-open"
 
-# mutt-open and w3m config for viewing URLs
-mkdir -p "${HOME}/.w3m"
-ln -f -s -n "${DIR}/w3m-config"                       "${HOME}/.w3m/config"
-ln -f -s -n "${DIR}/archival/mutt-open"               "${HOME}/bin/mutt-open"
+ln -f -s -n "${DIR}/offlineimap/offlineimap.rc"  "${HOME}/.offlineimaprc"
+ln -f -s -n "${DIR}/offlineimap/offlineimap.py"  "${HOME}/.offlineimap.py"
 
-# offlineimap
-ln -f -s -n "${DIR}/offlineimap/offlineimap.rc"       "${HOME}/.offlineimaprc"
-ln -f -s -n "${DIR}/offlineimap/offlineimap.py"       "${HOME}/.offlineimap.py"
-
-
+"${DIR}/w3m/install.sh"
 "${DIR}/msmtp/install.sh"
 "${DIR}/archival/install.sh"
 "${DIR}/goobook/install.sh"
