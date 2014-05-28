@@ -8,7 +8,7 @@ sudo pip install goobook
 
 
 mkdir -p "${HOME}/comm/mutt"
-mkdir -p "${DIR}/mutt/temp"  &&  touch "${DIR}/mutt/cache/"{"headers","bodies"}
+mkdir -p "${DIR}/mutt/temp" "${DIR}/mutt/cache/"{headers,bodies}
 mkdir -p "${HOME}/Downloads/mutt-attachments"
 
 ln -f -s -n "${HOME}/comm/mutt"  "${HOME}/.mail"
@@ -16,7 +16,7 @@ ln -f -s -n "${DIR}/mutt"        "${HOME}/.mutt"
 
 ln -f -s -n "${DIR}/mutt/themes/inkpot-256.theme"  "${DIR}/mutt/themes/current-theme.rc"
 
-mkdir -p "${DIR}/mu/{cache,xapian,results,log}"
+mkdir -p "${DIR}/mu"/{cache,xapian,results,log}
 ln -f -s -n "${DIR}/mu"  "${HOME}/.mu"
 
 ln -f -s -n "${DIR}/archival/mutt-open"  "${HOME}/bin/mutt-open"
