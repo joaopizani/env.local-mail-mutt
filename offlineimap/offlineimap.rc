@@ -4,37 +4,39 @@ accounts = gmail
 pythonfile=~/.offlineimap.py
 fsync = False
 
+
+
 [Account gmail]
 localrepository = gmail-local
 remoterepository = gmail-remote
 status_backend = sqlite
-postsynchook = mu index --maildir=~/.mail
+postsynchook = mu index --maildir=~/.mail/gmail
+
+synclabels = yes
+labelsheader = X-Label
+ignorelabels = \Draft, \Trash
+
 
 [Repository gmail-local]
-type = Maildir
+type = GmailMaildir
 localfolders = ~/.mail/gmail
-nametrans = lambda folder: { 'drafts':    '[Gmail]/Drafts',
-                             'sent':      '[Gmail]/Sent Mail',
-                             'flagged':   '[Gmail]/Starred',
-                             'spam':      '[Gmail]/Spam',
+nametrans = lambda folder: { 'drafts':  '[Gmail]/Drafts',
+                             'all':     '[Gmail]/All Mail'
                            }.get(folder, folder)
+
 
 [Repository gmail-remote]
-maxconnections = 2
 type = Gmail
+maxconnections = 2
 remoteusereval = localmail_username
 remotepasseval = keyring.get_password("localmail-gmail", localmail_username)
-ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-realdelete = no
+
 nametrans = lambda folder: { '[Gmail]/Drafts':    'drafts',
-                             '[Gmail]/Sent Mail': 'sent',
-                             '[Gmail]/Starred':   'flagged',
-                             '[Gmail]/Spam':      'spam',
+                             '[Gmail]/All Mail':  'all'
                            }.get(folder, folder)
 
-folderfilter = lambda folder: folder not in [ '[Gmail]/Trash',
-                                              '[Gmail]/All Mail',
-                                              '[Gmail]/Important',
-                                            ]
+folderfilter = lambda folder: folder in [ '[Gmail]/Drafts',
+                                          '[Gmail]/All Mail'
+                                        ]
 

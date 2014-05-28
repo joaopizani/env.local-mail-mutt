@@ -1,6 +1,6 @@
 # GMail general macros and confs (user-independent)
 
-set spoolfile = "+gmail/INBOX"
+set spoolfile = "+gmail/all"
 set postponed = "+gmail/drafts"
 
 

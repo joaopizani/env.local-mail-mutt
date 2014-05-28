@@ -1,5 +1,2 @@
- +gmail/INBOX
- +gmail/sent
- +gmail/flagged
+ +gmail/all
  +gmail/drafts
- +gmail/spam
