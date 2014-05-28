@@ -22,9 +22,6 @@ set text_flowed=yes                            # format=flowed
 set sendmail = "msmtp"
 set sendmail_wait = 0
 
-# save sent in the folder where replied from
-folder-hook . "set record=^"
-
 # Postponing etc.
 bind compose p postpone-message
 bind index p recall-message
