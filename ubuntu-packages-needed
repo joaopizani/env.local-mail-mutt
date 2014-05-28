@@ -1,1 +1,1 @@
-mutt-patched  muttprint  offlineimap  msmtp  w3m  python-keyring  python-gnomekeyring  maildir-utils  golang  golang-go  msmtp-gnome  python-pip
+mutt-patched muttprint offlineimap msmtp w3m python-keyring python-gnomekeyring libgmime-2.6-dev libxapian-dev maildir-utils golang golang-go msmtp-gnome python-pip 
