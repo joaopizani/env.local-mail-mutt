@@ -39,7 +39,7 @@ sed -i "s/\(.\)/ +${NDIR_NAME}\/\1/"    "${NEWSBOXES_FILE}"
 # mutt-news.rc
 RCPREFIX="macro index,pager gw"
 RCSUFFIX="<enter>\" \"go news\""
-SYNCLINE="macro index O \"<shell-escape>timeout 30s maildir-feed ${NDIR_GLOBAL}<enter>\" \"synchronize news\""
+SYNCLINE="macro index O \"<shell-escape>timeout --preserve-status 30s maildir-feed ${NDIR_GLOBAL}<enter>\" \"synchronize news\""
 
 tr " " "\n" < "${NEWSBOXES_FILE}-dirs" > "${NEWSRC}"  # cheesy whitespace handling
 sed -i "s/\(^[0-9]\+\)\(.*\)/${RCPREFIX}\1 \"<change-folder>+${NDIR_NAME}\/\1\2${RCSUFFIX}/g" "${NEWSRC}"
