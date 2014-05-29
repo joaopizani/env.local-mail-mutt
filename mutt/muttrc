@@ -8,7 +8,7 @@ source ~/.mutt/mutt-composing-view.rc
 macro index o "<shell-escape>offlineimap -u basic<enter>"  "run offlineimap to sync all mail"
 
 # Mailboxes
-mailboxes `cat ~/.mutt/config-gmail/mailboxes-gmail ~/.localmail-custom/gmail-personal-mailboxes "$(F="$(readlink -f "${HOME}/.mutt")/../news/mailboxes-news"; if [ ! -s "$F" ]; then F=/dev/null; fi; echo "$F")" | tr -d "\n"`
+mailboxes `cat ~/.mutt/oi.boxes "$(F="$(readlink -f "${HOME}/.mutt")/../news/mailboxes-news"; if [ ! -s "$F" ]; then F=/dev/null; fi; echo "$F")" | tr -d "\n"`
 
 # Extra configs
 source ~/.mutt/themes/current-theme.rc
@@ -16,7 +16,7 @@ source ~/.mutt/mutt-mu-search.rc
 source ~/.mutt/mutt-goobook.rc
 source ~/.mutt/mutt-gpg.rc
 
-# Account Settings, news
-source ~/.mutt/config-gmail/mutt-gmail.rc
+# Gmail, news
+source ~/.mutt/mutt-gmail.rc
 source `F="$(readlink -f "${HOME}/.mutt")/../news/mutt-news.rc"; if [ ! -s "$F" ]; then F=/dev/null; fi; echo "$F"` 
 

@@ -5,6 +5,14 @@ pythonfile=~/.offlineimap.py
 fsync = False
 
 
+[mbnames]
+enabled = yes
+filename = "~/.mutt/oi.boxes"
+header = " "
+peritem = "+%(accountname)s/$(foldername)s"
+sep = " "
+footer = "\n"
+
 
 [Account gmail]
 localrepository = gmail-local
