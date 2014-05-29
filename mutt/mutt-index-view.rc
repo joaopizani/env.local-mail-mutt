@@ -21,6 +21,7 @@ bind index _        collapse-all
 bind index n        toggle-new
 bind index N        search-next
 bind index <Esc>t   tag-pattern
+bind index,pager y  edit-label
 macro index T "<collapse-thread><tag-thread>"
 
 macro index a "<limit>all<enter>" "show all messages (undo limit)"
@@ -30,3 +31,4 @@ macro index \Cr "<collapse-all><tag-pattern>~U<enter><tag-prefix><clear-flag>N<u
 
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
