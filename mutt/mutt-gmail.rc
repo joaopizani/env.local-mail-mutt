@@ -13,16 +13,16 @@ macro index Sl "<edit-label> \\Spam<enter>" "label as spam"
 macro index,pager ga "<change-folder>+gmail/all<enter>" "go to all mail"
 
 macro index,pager gi "<change-folder>+gmail/INBOX<enter>" "go to inbox"
-macro index,pager gI "<limit>~y\\Inbox<enter>" "labeled inbox"
+macro index,pager gI "<limit>~y\\Inbox<enter><collapse-all>" "labeled inbox"
 
 macro index,pager gs "<change-folder>+gmail/sent<enter>" "go to sent"
-macro index,pager gS "<limit>~y\\Sent<enter>" "labeled sent"
+macro index,pager gS "<limit>~y\\Sent<enter><collapse-all>" "labeled sent"
 
 macro index,pager gp "<change-folder>+gmail/spam<enter>" "go to spam"
-macro index,pager gP "<limit>~y\\Spam<enter>" "labeled spam"
+macro index,pager gP "<limit>~y\\Spam<enter><collapse-all>" "labeled spam"
 
 macro index,pager gd "<change-folder>+gmail/drafts<enter>" "go to drafts"
-macro index,pager gD "<limit>~y\\Drafts<enter>" "labeled drafts"
+macro index,pager gD "<limit>~y\\Drafts<enter><collapse-all>" "labeled drafts"
 
 macro index,pager gmi "<save-message>+gmail/INBOX<enter>" "move to inbox"
 macro index,pager gci "<copy-message>+gmail/INBOX<enter>" "copy to inbox"
