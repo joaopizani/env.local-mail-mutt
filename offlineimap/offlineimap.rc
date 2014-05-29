@@ -22,7 +22,7 @@ postsynchook = mu index --maildir=~/.mail/gmail
 
 synclabels = yes
 labelsheader = X-Label
-ignorelabels = \Draft, \Trash, \Important
+ignorelabels = \Draft, \Trash, \Spam
 
 
 [Repository gmail-local]
