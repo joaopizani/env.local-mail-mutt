@@ -18,19 +18,15 @@ bind index R        group-reply
 bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
 bind index _        collapse-all
-
 bind index n        toggle-new
 bind index N        search-next
-bind index T        tag-thread
 bind index <Esc>t   tag-pattern
+macro index T "<collapse-thread><tag-thread>"
 
-
-macro index a "<limit>all\n" "show all messages (undo limit)"
+macro index a "<limit>all<enter>" "show all messages (undo limit)"
 
 # Ctrl-R to mark all as read
-macro index \Cr "<tag-pattern>~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+macro index \Cr "<collapse-all><tag-pattern>~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter><collapse-all>" "mark all messages as read"
 
-# Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
-
