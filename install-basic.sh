@@ -23,6 +23,7 @@ ln -f -s -n "${DIR}/archival/mutt-open"  "${HOME}/bin/mutt-open"
 
 ln -f -s -n "${DIR}/offlineimap/offlineimap.rc"  "${HOME}/.offlineimaprc"
 ln -f -s -n "${DIR}/offlineimap/offlineimap.py"  "${HOME}/.offlineimap.py"
+touch "${DIR}/mutt/oi.boxes"
 
 "${DIR}/w3m/install.sh"
 "${DIR}/msmtp/install.sh"
