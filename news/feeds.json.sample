@@ -6,8 +6,6 @@
     "cfps": "http://www.wikicfp.com/cfp/rss?list=23611",
     "24oranges": "http://www.24oranges.nl/feed/",
 
-    "lwn-linux": "http://lwn.net/headlines/Features",
     "git-annex": "http://git-annex.branchable.com/design/assistant/blog/index.rss",
-    "coindesk": "http://feeds.feedburner.com/CoinDesk?fmt=xml",
-    "hackernews": "http://news.ycombinator.com/rss"
+    "coindesk": "http://feeds.feedburner.com/CoinDesk?fmt=xml"
 }
