@@ -1,4 +1,6 @@
 # Index View Options
+set hide_limited = yes
+set hide_missing = yes
 set date_format = "%Y-%m-%d %H:%M%z"
 set index_format = "%03C %?M?(#%03M)&(%4l)? [%Z] %D  %-20.20F  %s"
 set sort = threads  # like gmail
