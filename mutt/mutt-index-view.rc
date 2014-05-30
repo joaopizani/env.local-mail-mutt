@@ -1,8 +1,8 @@
 # Index View Options
 set hide_limited = yes
 set hide_missing = yes
-set date_format = "%Y-%m-%d %H:%M%z"
-set index_format = "%03C %?M?(#%03M)&(%4l)? [%Z] %D  %-20.20F  %s"
+set date_format = "%Y-%m-%d %H:%M"
+set index_format = "%?M?(#%02M)&(   )? [%Z] %D  %-23.23F  %?Y?[%20Y]&[                    ]? %s"
 set sort = threads  # like gmail
 set sort_browser = reverse-date
 set sort_aux = reverse-last-date-received
