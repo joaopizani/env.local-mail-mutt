@@ -1,7 +1,7 @@
 # Sidebar
 set sidebar_delim = ' │'
 set sidebar_visible = yes
-set sidebar_width = 30
+set sidebar_width = 27
 color sidebar_new color221 color233
 
 bind index,pager <down>   sidebar-next
