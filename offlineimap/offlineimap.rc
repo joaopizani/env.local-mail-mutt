@@ -22,29 +22,31 @@ postsynchook = mu index --maildir=~/.mail/gmail
 
 synclabels = yes
 labelsheader = X-Label
-ignorelabels = \Draft, \Trash, \Spam
+ignorelabels = \Inbox, \Starred, \Sent, \Important, \Draft, \Trash, \Spam
 
 
 [Repository gmail-local]
 type = GmailMaildir
 localfolders = ~/.mail/gmail
-nametrans = lambda folder: { 'drafts':  '[Gmail]/Drafts',
-                             'all':     '[Gmail]/All Mail'
+nametrans = lambda folder: { 'inbox':   'INBOX',
+                             'all':     '[Gmail]/All Mail',
+                             'drafts':  '[Gmail]/Drafts',
+                             'trash':   '[Gmail]/Trash'
                            }.get(folder, folder)
 
 
 [Repository gmail-remote]
 type = Gmail
 maxconnections = 2
+expunge = yes
 remoteusereval = localmail_username
 remotepasseval = keyring.get_password("localmail-gmail", localmail_username)
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
-nametrans = lambda folder: { '[Gmail]/Drafts':    'drafts',
-                             '[Gmail]/All Mail':  'all'
+nametrans = lambda folder: { 'INBOX':             'inbox',
+                             '[Gmail]/All Mail':  'all',
+                             '[Gmail]/Drafts':    'drafts',
+                             '[Gmail]/Trash':     'trash'
                            }.get(folder, folder)
 
-folderfilter = lambda folder: folder in [ '[Gmail]/Drafts',
-                                          '[Gmail]/All Mail'
-                                        ]
-
+folderfilter = lambda folder: folder in ['[Gmail]/Drafts', '[Gmail]/All Mail', 'INBOX', '[Gmail]/Trash']
