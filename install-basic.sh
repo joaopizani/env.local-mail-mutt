@@ -2,33 +2,7 @@
 
 DIR="$(cd -P "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd)"
 
-
-sudo apt-get install $(cat "${DIR}/ubuntu-packages-needed")
-sudo pip install goobook
-
-
-mkdir -p "${HOME}/comm/mutt"
-mkdir -p "${DIR}/mutt/temp" "${DIR}/mutt/cache/"{headers,bodies}
-mkdir -p "${HOME}/Downloads/mutt-attachments"
-
-ln -f -s -n "${HOME}/comm/mutt"  "${HOME}/.mail"
-ln -f -s -n "${DIR}/mutt"        "${HOME}/.mutt"
-
-ln -f -s -n "${DIR}/mutt/themes/inkpot-256.theme"  "${DIR}/mutt/themes/current-theme.rc"
-
-mkdir -p "${DIR}/mu"/{cache,xapian,results,log}
-ln -f -s -n "${DIR}/mu"  "${HOME}/.mu"
-
-ln -f -s -n "${DIR}/archival/mutt-open"  "${HOME}/bin/mutt-open"
-
-ln -f -s -n "${DIR}/offlineimap/offlineimap.rc"  "${HOME}/.offlineimaprc"
-ln -f -s -n "${DIR}/offlineimap/offlineimap.py"  "${HOME}/.offlineimap.py"
-touch "${DIR}/mutt/oi.boxes"
-
-"${DIR}/w3m/install.sh"
-"${DIR}/msmtp/install.sh"
-"${DIR}/archival/install.sh"
-"${DIR}/goobook/install.sh"
+"${DIR}/install-dependencies.sh"
 
 
 # Setting username and password in the system keyring
@@ -41,4 +15,16 @@ keyring.set_password("localmail-gmail", "${EMAIL_ADDRESS}", raw_input("gmail-pas
 EOF
 
 python -c "$PYCMD"
+
+
+mkdir -p "${DIR}/mu"/{cache,xapian,results,log}  &&  ln -f -s -n "${DIR}/mu" "${HOME}/.mu"
+
+"${DIR}/mutt/install.sh"
+"${DIR}/offlineimap/install.sh"
+"${DIR}/w3m/install.sh"
+"${DIR}/msmtp/install.sh"
+"${DIR}/archival/install.sh"
+"${DIR}/goobook/install.sh"
+"${DIR}/news/install_maildir-feed.sh"
+"${DIR}/news/install_news.sh"
 
