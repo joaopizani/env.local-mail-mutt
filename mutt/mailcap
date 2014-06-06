@@ -3,4 +3,4 @@ text/html;       w3m -I %{charset} -T text/html; copiousoutput;
 
 application/*;   mutt-open '%s'; test=test -n "$DISPLAY"
 
-image/*;         eog '%s'
+image/*;         ristretto '%s'
