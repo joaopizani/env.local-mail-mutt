@@ -18,6 +18,9 @@ set forward_quote                              # include message in forwards
 set editor = "vim"
 set text_flowed=yes                            # format=flowed
 
+# do not save a copy of outgoing messages (avoid duplication)
+unset copy
+
 # Sending email options
 set sendmail = "msmtp"
 set sendmail_wait = 0
