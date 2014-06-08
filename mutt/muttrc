@@ -5,7 +5,7 @@ source ~/.mutt/mutt-pager-view.rc
 source ~/.mutt/mutt-composing-view.rc
 
 # Sync email
-macro index o "<shell-escape>pgrep offlineimap 2>&1 > /dev/null || offlineimap -u basic<enter>"  "offlineimap"
+macro index o "<shell-escape>pgrep offlineimap 2>&1 > /dev/null || offlineimap -o -u basic<enter>"  "offlineimap"
 
 # Mailboxes
 mailboxes `cat ~/.mutt/oi.boxes "$(F="$(readlink -f "${HOME}/.mutt")/../news/mailboxes-news"; if [ ! -s "$F" ]; then F=/dev/null; fi; echo "$F")" | tr -d "\n"`
